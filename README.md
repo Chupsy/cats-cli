@@ -17,3 +17,9 @@ yarn global add typescript
 ```
 yarn global add tslint
 ```
+
+## Command Line
+
+Commands | Desciption | Options
+--- | --- | ---
+```cats initialize``` | Create in the current directory a brand new project | _None_
