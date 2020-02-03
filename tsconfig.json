@@ -13,7 +13,7 @@
   },
   "exclude": [
     "node_modules",
-    "**/*.test.ts",
+    "**/*.spec.ts",
     "dist",
     "data",
     "integration-tests"
