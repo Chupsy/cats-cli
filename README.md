@@ -18,6 +18,12 @@ yarn global add typescript
 yarn global add tslint
 ```
 
+## Installation
+
+```
+yarn global add cats-cli
+```
+
 ## Command Line
 
 Commands | Desciption | Options
