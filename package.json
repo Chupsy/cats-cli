@@ -1,0 +1,59 @@
+{
+  "name": "cats",
+  "version": "1.0.0",
+  "description": "CLI to create and manage clean architecture projects in typescript server-side",
+  "main": "lib/index.js",
+  "scripts": {
+    "test:unit": "jest -i ",
+    "test:unit:watch": "yarn test:unit --watch",
+    "test:unit:coverage": "yarn test:unit --coverage",
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "create": "yarn build && yarn test",
+    "type:check": "tsc --noEmit",
+    "build": "rm -rf dist && tsc ",
+    "test": "npm i -g && cats",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' "
+  },
+  "bin": {
+    "cats": "./dist/index.js"
+  },
+  "keywords": [
+    "typescript",
+    "clean architecture"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn type:check"
+    }
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "prettier --write",
+      "tslint --fix",
+      "git add"
+    ]
+  },
+  "author": "Chupsy",
+  "license": "ISC",
+  "dependencies": {
+    "@types/clear": "^0.1.0",
+    "@types/figlet": "^1.2.0",
+    "@types/inquirer": "^6.5.0",
+    "@types/jest": "^25.1.1",
+    "@types/node": "^13.7.0",
+    "chalk": "^3.0.0",
+    "clear": "^0.1.0",
+    "commander": "^4.1.0",
+    "figlet": "^1.2.4",
+    "husky": "^4.2.1",
+    "inquirer": "^7.0.4",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.0.7",
+    "path": "^0.12.7",
+    "ts-jest": "^25.1.0",
+    "ts-node": "^8.6.2",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.1.0",
+    "typescript": "^3.7.5"
+  }
+}
