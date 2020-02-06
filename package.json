@@ -34,7 +34,7 @@
     ]
   },
   "author": "Chupsy",
-  "license": "ISC",
+  "license": "gpl-3.0",
   "dependencies": {
     "@types/clear": "^0.1.0",
     "@types/figlet": "^1.2.0",
