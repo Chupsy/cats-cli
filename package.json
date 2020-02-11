@@ -11,7 +11,7 @@
     "create": "yarn build && yarn test",
     "type:check": "tsc --noEmit",
     "build": "rm -rf dist && tsc ",
-    "test": "npm i -g && cats",
+    "run:local": "npm i -g && cats",
     "lint": "tslint -c tslint.json 'src/**/*.ts' "
   },
   "bin": {
