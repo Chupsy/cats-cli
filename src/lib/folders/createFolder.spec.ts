@@ -1,4 +1,5 @@
 import fs from 'fs'
+import path from 'path'
 import { createFolders, FolderSchema } from './createFolder'
 jest.mock('fs')
 const existSync = jest.fn()
@@ -20,7 +21,7 @@ describe('lib/createFolder', () => {
       }
       createFolders(folderSchema)
       expect(existSync).toBeCalledTimes(1)
-      expect(existSync).toBeCalledWith('root/test')
+      expect(existSync).toBeCalledWith(path.join('root', 'test'))
       expect(mkdirSync).not.toBeCalled()
     })
 
@@ -32,9 +33,9 @@ describe('lib/createFolder', () => {
       }
       createFolders(folderSchema)
       expect(existSync).toBeCalledTimes(1)
-      expect(existSync).toBeCalledWith('root/test')
+      expect(existSync).toBeCalledWith(path.join('root', 'test'))
       expect(mkdirSync).toBeCalledTimes(1)
-      expect(mkdirSync).toBeCalledWith('root/test')
+      expect(mkdirSync).toBeCalledWith(path.join('root', 'test'))
     })
 
     it('should create also children of the folder', () => {
@@ -64,15 +65,21 @@ describe('lib/createFolder', () => {
       }
       createFolders(folderSchema)
       expect(existSync).toBeCalledTimes(4)
-      expect(existSync).nthCalledWith(1, 'root/test')
-      expect(existSync).nthCalledWith(2, 'root/test/child1')
-      expect(existSync).nthCalledWith(3, 'root/test/child2')
-      expect(existSync).nthCalledWith(4, 'root/test/child2/child3')
+      expect(existSync).nthCalledWith(1, path.join('root', 'test'))
+      expect(existSync).nthCalledWith(2, path.join('root', 'test', 'child1'))
+      expect(existSync).nthCalledWith(3, path.join('root', 'test', 'child2'))
+      expect(existSync).nthCalledWith(
+        4,
+        path.join('root', 'test', 'child2', 'child3')
+      )
       expect(mkdirSync).toBeCalledTimes(4)
-      expect(mkdirSync).nthCalledWith(1, 'root/test')
-      expect(mkdirSync).nthCalledWith(2, 'root/test/child1')
-      expect(mkdirSync).nthCalledWith(3, 'root/test/child2')
-      expect(mkdirSync).nthCalledWith(4, 'root/test/child2/child3')
+      expect(mkdirSync).nthCalledWith(1, path.join('root', 'test'))
+      expect(mkdirSync).nthCalledWith(2, path.join('root', 'test', 'child1'))
+      expect(mkdirSync).nthCalledWith(3, path.join('root', 'test', 'child2'))
+      expect(mkdirSync).nthCalledWith(
+        4,
+        path.join('root', 'test', 'child2', 'child3')
+      )
     })
   })
 })
