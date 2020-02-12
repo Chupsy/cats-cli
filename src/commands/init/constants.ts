@@ -1,1 +1,1 @@
-export const folderList = ['src', 'src/domain', 'src/domain/models']
+export const folderList = ['src', 'src/domain', 'src/domain/models'];
