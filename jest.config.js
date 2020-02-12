@@ -9,6 +9,15 @@ module.exports = {
       tsConfig: 'tsconfig.spec.json',
     },
   },
+  coverageThreshold: {
+    global: {
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: -10,
+    },
+  },
+  collectCoverage: true,
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.ts$',
   moduleFileExtensions: ['ts', 'js', 'json', 'node'],
 }
