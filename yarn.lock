@@ -1243,8 +1243,6 @@ __metadata:
     path: ^0.12.7
     ts-jest: 25.2.0
     ts-node: 8.6.2
-    tslint-config-prettier: 1.18.0
-    tslint-plugin-prettier: 2.1.0
     typescript: 3.7.5
   bin:
     cats: ./dist/index.js
@@ -2001,18 +1999,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^2.2.0":
-  version: 2.7.0
-  resolution: "eslint-plugin-prettier@npm:2.7.0"
-  dependencies:
-    fast-diff: ^1.1.1
-    jest-docblock: ^21.0.0
-  peerDependencies:
-    prettier: ">= 0.11.0"
-  checksum: 89c65bc6fd455c3533a968e26a67b6ee758eccaa861577ee97100f64e13484aa21b900f3b2d3550551384a038a530c9eab64db7d1f57559faee934e56b466330
-  languageName: node
-  linkType: hard
-
 "eslint-scope@npm:^5.0.0":
   version: 5.0.0
   resolution: "eslint-scope@npm:5.0.0"
@@ -2310,13 +2296,6 @@ __metadata:
   version: 3.1.1
   resolution: "fast-deep-equal@npm:3.1.1"
   checksum: 15a67ad01c2f73c64abf4e31e302c776be7497cd8f634b5dfd217af1a9e3b0ab6e340639bf02433ecd14c7fae7480e955bfea05cd1999227913eaa75f907be93
-  languageName: node
-  linkType: hard
-
-"fast-diff@npm:^1.1.1":
-  version: 1.2.0
-  resolution: "fast-diff@npm:1.2.0"
-  checksum: dc395728fc6b753aaae277a5bc6c868e51849f49f2b89c3db45aa152e7345053cf94c080bb4bb6fbaea7678a154194a315c8aed32a5bbf99a857819a43d9e014
   languageName: node
   linkType: hard
 
@@ -3468,13 +3447,6 @@ __metadata:
     jest-get-type: ^25.1.0
     pretty-format: ^25.1.0
   checksum: 5e36a2123c1a9ffd0e18393217d78cfe8eef62db3b41eb21a5763210b14c33d69de4e61a72836d364856099047acc79b3dc195a5ce639cfd837c98c5128d10e8
-  languageName: node
-  linkType: hard
-
-"jest-docblock@npm:^21.0.0":
-  version: 21.2.0
-  resolution: "jest-docblock@npm:21.2.0"
-  checksum: f72f823a6eb49a8ff88b6c116e759ba2cdb9338e66e98f493ca28519c35f160573d2eda20e24f4bfebbe824a6770245fa09b96afcc5009c570d13b9b5ba2ee31
   languageName: node
   linkType: hard
 
@@ -6227,33 +6199,10 @@ resolve@^1.10.1:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.7.1, tslib@npm:^1.8.1, tslib@npm:^1.9.0":
+"tslib@npm:^1.8.1, tslib@npm:^1.9.0":
   version: 1.10.0
   resolution: "tslib@npm:1.10.0"
   checksum: 626387669b38797372530d84df93dafcc0eca2b3bad31b109c7308b2e8d9c4ed0ba94113eb08a6946aa1fbee3b619fb69dd81f8681654bbc806cf8f208caeb47
-  languageName: node
-  linkType: hard
-
-"tslint-config-prettier@npm:1.18.0":
-  version: 1.18.0
-  resolution: "tslint-config-prettier@npm:1.18.0"
-  bin:
-    tslint-config-prettier-check: bin/check.js
-  checksum: d7bee9e6174bbdf705e8a8c3b7fccc3423c09f690a38c7b9ea0bc2f19b9fe4702f6891e545f716656ecb23cb22ae84f4237348f94fedc97a84a7a63fdbba7e57
-  languageName: node
-  linkType: hard
-
-"tslint-plugin-prettier@npm:2.1.0":
-  version: 2.1.0
-  resolution: "tslint-plugin-prettier@npm:2.1.0"
-  dependencies:
-    eslint-plugin-prettier: ^2.2.0
-    lines-and-columns: ^1.1.6
-    tslib: ^1.7.1
-  peerDependencies:
-    prettier: ^1.9.0
-    tslint: ^5.0.0
-  checksum: 097727082555176c9a40290c57eb0a84a8081eabbb0e01607d487f34ea6cc1ee7754839f20522757562a186cc969752379ea02eabdc68527747d4a19dc2105a1
   languageName: node
   linkType: hard
 
