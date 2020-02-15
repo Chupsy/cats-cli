@@ -23,12 +23,6 @@ npm install -g yarn@berry
 yarn global add typescript
 ```
 
-4. Install [TSLint](https://palantir.github.io/tslint/)
-
-```
-yarn global add tslint
-```
-
 ## Installation
 
 ```
