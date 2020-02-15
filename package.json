@@ -1,61 +1,68 @@
 {
-  "name": "cats",
-  "version": "1.0.0",
-  "description": "CLI to create and manage clean architecture projects in typescript server-side",
-  "main": "lib/index.js",
-  "scripts": {
-    "test:unit": "jest -i ",
-    "test:unit:watch": "yarn test:unit --watch",
-    "test:unit:coverage": "yarn test:unit --coverage",
-    "start": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts",
-    "create": "yarn build && yarn test",
-    "type:check": "tsc --noEmit",
-    "build": "rm -rf dist && tsc ",
-    "run:local": "npm i -g && cats",
-    "lint": "tslint -c tslint.json 'src/**/*.ts' "
-  },
-  "bin": {
-    "cats": "./dist/index.js"
-  },
-  "keywords": [
-    "typescript",
-    "clean architecture"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && yarn type:check"
+    "name": "cats",
+    "version": "1.0.0",
+    "description": "CLI to create and manage clean architecture projects in typescript server-side",
+    "main": "lib/index.js",
+    "scripts": {
+        "test:unit": "jest -i ",
+        "test:unit:watch": "yarn test:unit --watch",
+        "test:unit:coverage": "yarn test:unit --coverage",
+        "start": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts",
+        "create": "yarn build && yarn test",
+        "type:check": "tsc --noEmit",
+        "build": "rm -rf dist && tsc ",
+        "run:local": "npm i -g && cats",
+        "lint": "eslint --fix 'src/**/*.ts'"
+    },
+    "bin": {
+        "cats": "./dist/index.js"
+    },
+    "keywords": [
+        "typescript",
+        "clean architecture"
+    ],
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged && yarn type:check"
+        }
+    },
+    "lint-staged": {
+        "**/*.ts": [
+            "prettier --write",
+            "eslint --fix"
+        ]
+    },
+    "author": "Chupsy",
+    "license": "GPL-3.0-or-later",
+    "dependencies": {
+        "@types/clear": "^0.1.0",
+        "@types/figlet": "^1.2.0",
+        "@types/inquirer": "^6.5.0",
+        "@types/node": "^13.7.0",
+        "chalk": "^3.0.0",
+        "clear": "^0.1.0",
+        "commander": "^4.1.0",
+        "figlet": "^1.2.4",
+        "inquirer": "^7.0.4",
+        "path": "^0.12.7"
+    },
+    "devDependencies": {
+        "@types/jest": "25.1.2",
+        "@typescript-eslint/eslint-plugin": "^2.19.2",
+        "@typescript-eslint/parser": "^2.19.2",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-plugin-jest": "^23.7.0",
+        "eslint-plugin-node": "^11.0.0",
+        "husky": "4.2.3",
+        "jest": "25.1.0",
+        "lint-staged": "10.0.7",
+        "nodemon": "2.0.2",
+        "ts-jest": "25.2.0",
+        "ts-node": "8.6.2",
+        "typescript": "3.7.5"
+    },
+    "engines": {
+        "node": ">=10.19.0"
     }
-  },
-  "lint-staged": {
-    "**/*.ts": [
-      "prettier --write",
-      "tslint --fix"
-    ]
-  },
-  "author": "Chupsy",
-  "license": "GPL-3.0-or-later",
-  "dependencies": {
-    "@types/clear": "^0.1.0",
-    "@types/figlet": "^1.2.0",
-    "@types/inquirer": "^6.5.0",
-    "@types/node": "^13.7.0",
-    "chalk": "^3.0.0",
-    "clear": "^0.1.0",
-    "commander": "^4.1.0",
-    "figlet": "^1.2.4",
-    "inquirer": "^7.0.4",
-    "path": "^0.12.7"
-  },
-  "devDependencies": {
-    "@types/jest": "25.1.2",
-    "husky": "4.2.3",
-    "jest": "25.1.0",
-    "lint-staged": "10.0.7",
-    "nodemon": "2.0.2",
-    "ts-jest": "25.2.0",
-    "ts-node": "8.6.2",
-    "tslint-config-prettier": "1.18.0",
-    "tslint-plugin-prettier": "2.1.0",
-    "typescript": "3.7.5"
-  }
 }
