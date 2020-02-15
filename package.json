@@ -35,10 +35,6 @@
     "author": "Chupsy",
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@types/clear": "^0.1.0",
-        "@types/figlet": "^1.2.0",
-        "@types/inquirer": "^6.5.0",
-        "@types/node": "^13.7.0",
         "chalk": "^3.0.0",
         "clear": "^0.1.0",
         "commander": "^4.1.0",
@@ -47,7 +43,11 @@
         "path": "^0.12.7"
     },
     "devDependencies": {
+        "@types/clear": "^0.1.0",
+        "@types/figlet": "^1.2.0",
+        "@types/inquirer": "^6.5.0",
         "@types/jest": "25.1.2",
+        "@types/node": "^13.7.0",
         "@typescript-eslint/eslint-plugin": "^2.19.2",
         "@typescript-eslint/parser": "^2.19.2",
         "eslint": "^6.8.0",
