@@ -1,47 +1,71 @@
 name: Node.js CI
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+    push:
+        branches:
+            - master
+    pull_request:
+        branches:
+            - master
 
 jobs:
-  test:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        node-version: [10.x, 12.x]
+    test:
+        strategy:
+            matrix:
+                os: [ubuntu-latest, macos-latest, windows-latest]
+                node-version: [10.x, 12.x]
 
-    name: ${{ matrix.os }} @ NodeJS ${{ matrix.node-version }}
-    runs-on: ${{ matrix.os }}
-    steps:
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+        name: ${{ matrix.os }} @ NodeJS ${{ matrix.node-version }}
+        runs-on: ${{ matrix.os }}
+        steps:
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: Checkout Code
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.ref }}
+            - name: Checkout Code
+              uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.ref }}
 
-      - name: Install prerequisites
-        run: npm install -g yarn
+            - name: Install prerequisites
+              run: npm install -g yarn
 
-      - name: Install dependencies
-        run: yarn
+            - name: Install dependencies
+              run: yarn
 
-      - name: Run test unit
-        run: yarn test:unit:coverage
-        env:
-          CI: true
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          flags: unittests
-          name: codecov-cats-cli
-          fail_ci_if_error: true
+            - name: Run test unit
+              run: yarn test:unit
+              env:
+                  CI: true
+    coverage:
+        name: Code coverage
+        runs-on: ubuntu-latest
+        steps:
+            - name: Use Node.js 12.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 12.x
+
+            - name: Checkout Code
+              uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.ref }}
+
+            - name: Install prerequisites
+              run: npm install -g yarn
+
+            - name: Install dependencies
+              run: yarn
+
+            - name: Run test unit
+              run: yarn test:unit:coverage
+              env:
+                  CI: true
+            - name: Upload coverage to Codecov
+              uses: codecov/codecov-action@v1
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  flags: unittests
+                  name: codecov-cats-cli
+                  fail_ci_if_error: true
