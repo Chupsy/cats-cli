@@ -1,5 +1,5 @@
 {
-    "name": "cats",
+    "name": "cats-cli",
     "version": "1.0.0",
     "description": "CLI to create and manage clean architecture projects in typescript server-side",
     "main": "lib/index.js",
