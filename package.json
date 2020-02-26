@@ -1,8 +1,11 @@
 {
     "name": "cats-cli",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "CLI to create and manage clean architecture projects in typescript server-side",
-    "main": "lib/index.js",
+    "main": "dist/index.js",
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "test:unit": "jest -i ",
         "test:unit:watch": "yarn test:unit --watch",
@@ -14,6 +17,12 @@
         "run:local": "npm i -g && cats",
         "lint": "eslint --fix 'src/**/*.ts'",
         "commit": "git-cz"
+    },
+    "release": {
+        "branches": [
+            "master",
+            "next"
+        ]
     },
     "bin": {
         "cats": "./dist/index.js"
@@ -60,6 +69,7 @@
         "jest": "25.1.0",
         "lint-staged": "10.0.8",
         "nodemon": "2.0.2",
+        "semantic-release": "^17.0.4",
         "ts-jest": "25.2.1",
         "ts-node": "8.6.2",
         "typescript": "3.8.2"
