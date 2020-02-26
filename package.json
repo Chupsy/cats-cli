@@ -12,7 +12,8 @@
         "type:check": "tsc --noEmit",
         "build": "rm -rf dist && tsc ",
         "run:local": "npm i -g && cats",
-        "lint": "eslint --fix 'src/**/*.ts'"
+        "lint": "eslint --fix 'src/**/*.ts'",
+        "commit": "git-cz"
     },
     "bin": {
         "cats": "./dist/index.js"
@@ -50,6 +51,7 @@
         "@types/node": "13.7.6",
         "@typescript-eslint/eslint-plugin": "2.21.0",
         "@typescript-eslint/parser": "2.21.0",
+        "cz-conventional-changelog": "3.1.0",
         "eslint": "6.8.0",
         "eslint-config-prettier": "6.10.0",
         "eslint-plugin-jest": "23.8.0",
@@ -64,5 +66,10 @@
     },
     "engines": {
         "node": ">=10.19.0"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
 }
