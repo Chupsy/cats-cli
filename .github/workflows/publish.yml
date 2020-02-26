@@ -7,22 +7,28 @@ on:
 
 jobs:
     publish:
+        name: Publish
         runs-on: ubuntu-latest
         steps:
             - name: Use Node.js 12.x
-                  uses: actions/setup-node@v1
-                  with:
-                      node-version: 12.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 12.x
+
             - name: Checkout Code
               uses: actions/checkout@v2
               with:
                   ref: ${{ github.ref }}
+
             - name: Install prerequisites
               run: npm install -g yarn
+
             - name: Install dependencies
               run: yarn
-            - name: Install dependencies
+
+            - name: Build package
               run: yarn build
+
             - name: Semantic Release
               uses: cycjimmy/semantic-release-action@v2
               env:
