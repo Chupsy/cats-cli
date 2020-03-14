@@ -47,7 +47,7 @@
     "dependencies": {
         "chalk": "^3.0.0",
         "clear": "^0.1.0",
-        "commander": "^4.1.0",
+        "commander": "^5.0.0",
         "figlet": "^1.2.4",
         "inquirer": "^7.0.4",
         "path": "^0.12.7"
