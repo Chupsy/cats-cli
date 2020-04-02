@@ -45,7 +45,7 @@
     "author": "Chupsy",
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "chalk": "^3.0.0",
+        "chalk": "^4.0.0",
         "clear": "^0.1.0",
         "commander": "^4.1.0",
         "figlet": "^1.2.4",
