@@ -629,10 +629,12 @@
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
   integrity sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==
 
-"@types/figlet@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@types/figlet/-/figlet-1.2.0.tgz#2dab76da069dc8ce5dcab461f7f2788317fb01a8"
-  integrity sha512-TDZkNpYfkc3X8yv7w1QBziZmmxzNfGKX+YjeNkMpmSiNV0QOdNf9G5cEZB3FH1/oaqpSQEdxuDzURdju2L3lng==
+"@types/figlet@1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@types/figlet/-/figlet-1.12.0.tgz#93815add81d19f318cfcf61ff606afaf704e87ff"
+  integrity sha512-tPv140QqwGL4Jot2fzTxC6Oy8BVdHEZe4SJDlRuRkywfksv8kMCbTYvtuN9mJCm41HlgRhwb5rRaiH6FE5Hm9g==
+  dependencies:
+    figlet "*"
 
 "@types/inquirer@6.5.0":
   version "6.5.0"
@@ -1671,6 +1673,11 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
+commander@^14.0.0:
+  version "14.0.3"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-14.0.3.tgz#425d79b48f9af82fcd9e4fc1ea8af6c5ec07bbc2"
+  integrity sha512-H+y0Jo/T1RZ9qPP4Eh1pkcQcLRglraJaSLoyOtHxu6AapkjWVCy2Sit1QQ4x3Dng8qDlSsZEet7g5Pq06MvTgw==
+
 commander@^4.0.1, commander@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
@@ -2690,6 +2697,13 @@ figgy-pudding@^3.4.1, figgy-pudding@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
   integrity sha512-vNKxJHTEKNThjfrdJwHc7brvM6eVevuO5nTj6ez8ZQ1qbXTvGthucRF7S4vf2cr71QVnT70V34v0S1DyQsti0w==
+
+figlet@*:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/figlet/-/figlet-1.12.0.tgz#3e9c3a12f112db9479bd5ae4b87bc2b337b9a1af"
+  integrity sha512-Ith3WsUi0N/EqGt+0/F6XnWhT04sohhH2tT0Dq7GdUmWbMTIoCbg2Jq9qKggmTO62ST5kRCfB311EmIMbizGyA==
+  dependencies:
+    commander "^14.0.0"
 
 figlet@^1.2.4:
   version "1.2.4"
